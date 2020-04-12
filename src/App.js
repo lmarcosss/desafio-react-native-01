@@ -51,7 +51,7 @@ export default function App() {
                   style={styles.likeText}
                   testID={`repository-likes-${item.id}`}
                 >
-                 {item.likes > 1 ? `${item.likes} Curtidas` : ''}
+                 {item.likes >= 1 ? `${item.likes} Curtidas` : ''}
                 </Text>
               </View>
 
