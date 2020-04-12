@@ -24,7 +24,7 @@ export default function App() {
 
     const repositoryIndex = repositories.findIndex((repository) => repository.id === id)
     const newRepositories = [...repositories]
-    
+
     newRepositories.splice(repositoryIndex, 1, repositoryLiked)
 
     setRepositories(newRepositories)
@@ -54,7 +54,9 @@ export default function App() {
                   style={styles.likeText}
                   testID={`repository-likes-${item.id}`}
                 >
-                 {item.likes >= 1 ? `${item.likes} Curtidas` : ''}
+                  {item.likes > 0 && ( 
+                    `${item.likes} ${item.likes > 1 ? 'Curtidas' : 'Curtida'}`
+                  )}
                 </Text>
               </View>
 
