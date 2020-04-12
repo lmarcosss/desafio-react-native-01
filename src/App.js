@@ -55,7 +55,7 @@ export default function App() {
                   testID={`repository-likes-${item.id}`}
                 >
                   {item.likes > 0 && ( 
-                    `${item.likes} ${item.likes > 1 ? 'Curtidas' : 'Curtida'}`
+                    `${item.likes} ${item.likes > 1 ? 'curtidas' : 'curtida'}`
                   )}
                 </Text>
               </View>
