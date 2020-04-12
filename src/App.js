@@ -22,9 +22,12 @@ export default function App() {
   async function handleLikeRepository(id) {
     const repositoryLiked = await repositoriesService.likeRepository(id)
 
-    const previousRepositories = repositories.filter((repository) => repository.id !== id)
+    const repositoryIndex = repositories.findIndex((repository) => repository.id === id)
+    const newRepositories = [...repositories]
+    
+    newRepositories.splice(repositoryIndex, 1, repositoryLiked)
 
-    setRepositories([repositoryLiked, ...previousRepositories])
+    setRepositories(newRepositories)
   }
 
   return (
